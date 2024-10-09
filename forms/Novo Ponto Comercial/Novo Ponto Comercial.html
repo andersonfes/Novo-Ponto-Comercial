@@ -1,0 +1,229 @@
+<html>
+
+<head>
+	<link type="text/css" rel="stylesheet" href="http://127.0.0.1:8080//style-guide/css/fluig-style-guide.min.css" />
+	<script type="text/javascript" src="http://127.0.0.1:8080//portal/resources/js/jquery/jquery.js"></script>
+	<script type="text/javascript" src="http://127.0.0.1:8080//portal/resources/js/jquery/jquery-ui.min.js"></script>
+	<script type="text/javascript" src="http://127.0.0.1:8080//portal/resources/js/mustache/mustache-min.js"></script>
+	<script type="text/javascript" src="http://127.0.0.1:8080//style-guide/js/fluig-style-guide.min.js"
+		charset="utf-8"></script>
+</head>
+
+<body>
+	<div class="fluig-style-guide">
+
+		<form name="form" role="form">
+			<div class="panel panel-primary">
+				<div class="panel-heading">
+					<h3 class="panel-title">Requisitante</h3>
+				</div>
+
+				<div class="panel-body">
+					<div class="form-group row">
+						<div class="col-md-4">
+							<label for="nome">Nome</label>
+							<input type="text" class="form-control" id="nome" name="nome">
+						</div>
+
+						<div class="col-md-4">
+							<label for="email">E-mail</label>
+							<input type="text" class="form-control" id="email" name="email">
+						</div>
+
+						<div class="col-md-2">
+							<label for="telefone">Telefone</label>
+							<input type="text" class="form-control" id="telefone" name="telefone">
+						</div>
+						<div class="col-md-2">
+							<label for="docIdentidade">Documento de Identidade</label>
+							<input type="text" class="form-control" id="docIdentidade" name="docIdentidade">
+						</div>
+					</div>
+
+					<div class="form-group row">
+						<div class="col-md-2">
+							<label for="dataNascimento">Data de Nascimento</label>
+							<input type="text" class="form-control" id="dataNascimento" name="dataNascimento">
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="panel panel-primary">
+				<div class="panel-heading">
+					<h3 class="panel-title">Responsáveis</h3>
+				</div>
+
+				<div class="panel-body">
+					<div class="form-group row">
+						<div class="table-responsive col-md-12">
+							<table id="dpTbPlan" tablename="dpTbPlan"
+								class="table table-striped fs-no-margin-bottom mf-5" noaddbutton=true
+								nodeletebutton=true>
+								<thead id="headerTbl">
+									<tr>
+										<th style="width: 10%">Remover</th>
+										<th>Sigla do Site <span class="fs-color-danger">*</span></th>
+									</tr>
+								</thead>
+								<tbody id="conteudoTbl">
+									<tr id="dpTbPlanTr">
+										<td>
+											<i class="fluigicon fluigicon-trash fluigicon-md" title="Remover?"
+												onClick="sites.events.onClickDelete(this)" style="cursor:pointer">
+											</i>
+										</td>
+										<td>
+											<input type="zoom" class="form-control" id="responsavel" name="responsavel"
+												data-zoom="
+												{
+													'displayKey':'colleagueName',
+													'placeholder': 'Selecione o usuário do Fluig',
+													'datasetId':'colleague',
+													'fields':[{
+														'field':'colleagueName',
+														'label':'colleagueName',
+														'standard':true
+													}]
+												}">
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+						<div class="form-group row" style="margin-top: 10px; text-align: center;">
+							<div class="col-sm-12">
+								<input id="botAtribuir" type="button" class="btn btn-primary btn-add"
+									value="Inserir Itens" onClick="sites.events.onClickAdd()" />
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="panel panel-primary">
+				<div class="panel-heading">
+					<h3 class="panel-title">Ponto comercial</h3>
+				</div>
+
+				<div class="panel-body">
+					<div class="form-group row">
+						<div class="col-md-2">
+							<label for="tipPonto">Tipo do ponto</label>
+
+							<div>
+								<div class="radio-inline">
+									<input type="radio" name="radio" value="quiosque" id="radioQuiosque">
+									<label for="quiosque">Quiosque</label>
+								</div>
+								<div class="radio-inline">
+									<input type="radio" name="radio" value="loja" id="radioLoja">
+									<label for="loja">Loja</label>
+								</div>
+							</div>
+						</div>
+
+						<div class="col-md-3">
+							<label for="diasFuncionamento">Dias de Funcionamento</label>
+
+							<div>
+								<div class="checkbox-inline">
+									<input type="checkbox" name="dom" value="Domingo" id="dom">
+									<label for="dom">Dom</label>
+								</div>
+
+								<div class="checkbox-inline">
+									<input type="checkbox" name="seg" value="segunda" id="seg">
+									<label for="seg">Seg</label>
+								</div>
+
+								<div class="checkbox-inline">
+									<input type="checkbox" name="ter" value="terca" id="ter">
+									<label for="ter">Ter</label>
+								</div>
+
+								<div class="checkbox-inline">
+									<input type="checkbox" name="qua" value="quarta" id="qua">
+									<label for="qua">Qua</label>
+								</div>
+
+								<div class="checkbox-inline">
+									<input type="checkbox" name="qui" value="queinta" id="qui">
+									<label for="qui">Qui</label>
+								</div>
+
+								<div class="checkbox-inline">
+									<input type="checkbox" name="sex" value="sexta" id="sex">
+									<label for="sex">Sex</label>
+								</div>
+
+								<div class="checkbox-inline">
+									<input type="checkbox" name="sab" value="sabado" id="sab">
+									<label for="sab">Sab</label>
+								</div>
+							</div>
+
+						</div>
+
+						<div class="col-md-2">
+							<label for="cep">Cep</label>
+							<input type="text" class="form-control" id="cep" name="cep">
+						</div>
+
+						<div class="col-md-4">
+							<label for="logradouro">Logradouro</label>
+							<input type="text" class="form-control" id="logradouro" name="logradouro">
+						</div>
+					</div>
+
+					<div class="form-group row">
+						<div class="col-md-4">
+							<label for="bairro">Bairro</label>
+							<input type="text" class="form-control" id="bairro" name="bairro">
+						</div>
+
+						<div class="col-md-4">
+							<label for="cidade">Cidade</label>
+							<input type="text" class="form-control" id="cidade" name="cidade">
+						</div>
+
+						<div class="col-md-1">
+							<label for="estado">Estado</label>
+							<input type="text" class="form-control" id="estado" name="estado">
+						</div>
+
+						<div class="col-md-1">
+							<label for="numero">Número</label>
+							<input type="text" class="form-control" id="numero" name="numero">
+						</div>
+					</div>
+
+					<div class="form-group row">
+						<div class="col-md-12">
+							<label for="infoAdicional">Imformações Adicionais</label>
+							<textarea rows="5" class="form-control" name="infoAdicional" id="infoAdicional"></textarea>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="panel panel-primary">
+				<div class="panel-heading">
+					<h3 class="panel-title">Financeiro</h3>
+				</div>
+
+				<div class="panel-body">
+					<div class="form-group row">
+						<div class="col-md-2">
+							<label for="valor">Valor</label>
+							<input type="text" class="form-control" id="valor" name="valor">
+						</div>
+					</div>
+				</div>
+			</div>
+		</form>
+
+	</div>
+</body>
+
+</html>
