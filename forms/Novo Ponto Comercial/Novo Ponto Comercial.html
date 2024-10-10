@@ -1,12 +1,11 @@
 <html>
 
 <head>
-	<link type="text/css" rel="stylesheet" href="http://127.0.0.1:8080//style-guide/css/fluig-style-guide.min.css" />
-	<script type="text/javascript" src="http://127.0.0.1:8080//portal/resources/js/jquery/jquery.js"></script>
-	<script type="text/javascript" src="http://127.0.0.1:8080//portal/resources/js/jquery/jquery-ui.min.js"></script>
-	<script type="text/javascript" src="http://127.0.0.1:8080//portal/resources/js/mustache/mustache-min.js"></script>
-	<script type="text/javascript" src="http://127.0.0.1:8080//style-guide/js/fluig-style-guide.min.js"
-		charset="utf-8"></script>
+	<link type="text/css" rel="stylesheet" href="/style-guide/css/fluig-style-guide.min.css" />
+	<script type="text/javascript" src="/portal/resources/js/jquery/jquery.js"></script>
+	<script type="text/javascript" src="/portal/resources/js/jquery/jquery-ui.min.js"></script>
+	<script type="text/javascript" src="/portal/resources/js/mustache/mustache-min.js"></script>
+	<script type="text/javascript" src="/style-guide/js/fluig-style-guide.min.js" charset="utf-8"></script>
 </head>
 
 <body>
@@ -20,12 +19,12 @@
 
 				<div class="panel-body">
 					<div class="form-group row">
-						<div class="col-md-4">
+						<div class="col-md-3">
 							<label for="nome">Nome</label>
 							<input type="text" class="form-control" id="nome" name="nome">
 						</div>
 
-						<div class="col-md-4">
+						<div class="col-md-3">
 							<label for="email">E-mail</label>
 							<input type="text" class="form-control" id="email" name="email">
 						</div>
@@ -34,13 +33,12 @@
 							<label for="telefone">Telefone</label>
 							<input type="text" class="form-control" id="telefone" name="telefone">
 						</div>
+
 						<div class="col-md-2">
 							<label for="docIdentidade">Documento de Identidade</label>
 							<input type="text" class="form-control" id="docIdentidade" name="docIdentidade">
 						</div>
-					</div>
 
-					<div class="form-group row">
 						<div class="col-md-2">
 							<label for="dataNascimento">Data de Nascimento</label>
 							<input type="text" class="form-control" id="dataNascimento" name="dataNascimento">
@@ -70,7 +68,7 @@
 									<tr id="dpTbPlanTr">
 										<td>
 											<i class="fluigicon fluigicon-trash fluigicon-md" title="Remover?"
-												onClick="sites.events.onClickDelete(this)" style="cursor:pointer">
+												style="cursor:pointer">
 											</i>
 										</td>
 										<td>
@@ -94,7 +92,7 @@
 						<div class="form-group row" style="margin-top: 10px; text-align: center;">
 							<div class="col-sm-12">
 								<input id="botAtribuir" type="button" class="btn btn-primary btn-add"
-									value="Inserir Itens" onClick="sites.events.onClickAdd()" />
+									value="Inserir Itens" />
 							</div>
 						</div>
 					</div>
@@ -108,81 +106,97 @@
 
 				<div class="panel-body">
 					<div class="form-group row">
+
 						<div class="col-md-2">
 							<label for="tipPonto">Tipo do ponto</label>
 
-							<div>
-								<div class="radio-inline">
-									<input type="radio" name="radio" value="quiosque" id="radioQuiosque">
-									<label for="quiosque">Quiosque</label>
-								</div>
-								<div class="radio-inline">
-									<input type="radio" name="radio" value="loja" id="radioLoja">
-									<label for="loja">Loja</label>
-								</div>
-							</div>
-						</div>
+							<div style="display: flex; gap: 20px">
 
-						<div class="col-md-3">
-							<label for="diasFuncionamento">Dias de Funcionamento</label>
-
-							<div>
-								<div class="checkbox-inline">
-									<input type="checkbox" name="dom" value="Domingo" id="dom">
-									<label for="dom">Dom</label>
+								<div class="switch switch-success">
+									<label for="switch-6-1">Quiosque</label>
+									<input class="switch-input" type="radio" value="quiosque" name="usercolorpreference"
+										id="switch-6-1" />
+									<label class="switch-button" for="switch-6-1">Toggle</label>
 								</div>
 
-								<div class="checkbox-inline">
-									<input type="checkbox" name="seg" value="segunda" id="seg">
-									<label for="seg">Seg</label>
-								</div>
+								<div class="switch switch-success">
+									<label for="switch-6-2">Loja</label>
+									<input class="switch-input" type="radio" value="loja" name="usercolorpreference"
+										id="switch-6-2" />
+									<label class="switch-button" for="switch-6-2">Toggle</label>
 
-								<div class="checkbox-inline">
-									<input type="checkbox" name="ter" value="terca" id="ter">
-									<label for="ter">Ter</label>
-								</div>
-
-								<div class="checkbox-inline">
-									<input type="checkbox" name="qua" value="quarta" id="qua">
-									<label for="qua">Qua</label>
-								</div>
-
-								<div class="checkbox-inline">
-									<input type="checkbox" name="qui" value="queinta" id="qui">
-									<label for="qui">Qui</label>
-								</div>
-
-								<div class="checkbox-inline">
-									<input type="checkbox" name="sex" value="sexta" id="sex">
-									<label for="sex">Sex</label>
-								</div>
-
-								<div class="checkbox-inline">
-									<input type="checkbox" name="sab" value="sabado" id="sab">
-									<label for="sab">Sab</label>
 								</div>
 							</div>
 
-						</div>
-
-						<div class="col-md-2">
-							<label for="cep">Cep</label>
-							<input type="text" class="form-control" id="cep" name="cep">
 						</div>
 
 						<div class="col-md-4">
-							<label for="logradouro">Logradouro</label>
-							<input type="text" class="form-control" id="logradouro" name="logradouro">
+							<label for="diasFuncionamento">Dias de Funcionamento</label>
+
+							<div style="display: flex; flex-direction: row; justify-content: space-between">
+								<div class="switch switch-success switch-labels">
+									<label for="switch-3-1">Domingo</label>
+									<input class="switch-input" type="checkbox" name="domingo" id="switch-3-1"
+										value="domingo" />
+									<label class="switch-button" for="switch-3-1">Toggle</label>
+								</div>
+								<div class="switch switch-success switch-labels">
+									<label for="switch-3-2">Segunda</label>
+									<input class="switch-input" type="checkbox" name="segunda" id="switch-3-2"
+										value="segunda" />
+									<label class="switch-button" for="switch-3-2">Toggle</label>
+								</div>
+								<div class="switch switch-success switch-labels">
+									<label for="switch-3-3">Terça</label>
+									<input class="switch-input" type="checkbox" name="terca" id="switch-3-3"
+										value="terca" />
+									<label class="switch-button" for="switch-3-3">Toggle</label>
+								</div>
+								<div class="switch switch-success switch-labels">
+									<label for="switch-3-4">Quarta</label>
+									<input class="switch-input" type="checkbox" name="quarta" id="switch-3-4"
+										value="quarta" />
+									<label class="switch-button" for="switch-3-4">Toggle</label>
+								</div>
+								<div class="switch switch-success switch-labels">
+									<label for="switch-3-5">Quinta</label>
+									<input class="switch-input" type="checkbox" name="quinta" id="switch-3-5"
+										value="quinta" />
+									<label class="switch-button" for="switch-3-5">Toggle</label>
+								</div>
+								<div class="switch switch-success switch-labels">
+									<label for="switch-3-6">Sexta</label>
+									<input class="switch-input" type="checkbox" name="sexta" id="switch-3-6"
+										value="sexta" />
+									<label class="switch-button" for="switch-3-6">Toggle</label>
+								</div>
+								<div class="switch switch-success switch-labels">
+									<label for="switch-3-7">Sabado</label>
+									<input class="switch-input" type="checkbox" name="sabadp" id="switch-3-7"
+										value="sabado" />
+									<label class="switch-button" for="switch-3-7">Toggle</label>
+								</div>
+							</div>
+
 						</div>
 					</div>
 
 					<div class="form-group row">
-						<div class="col-md-4">
+						<div class="col-md-1">
+							<label for="cep">Cep</label>
+							<input type="text" class="form-control" id="cep" name="cep">
+						</div>
+
+						<div class="col-md-3">
+							<label for="logradouro">Logradouro</label>
+							<input type="text" class="form-control" id="logradouro" name="logradouro">
+						</div>
+						<div class="col-md-3">
 							<label for="bairro">Bairro</label>
 							<input type="text" class="form-control" id="bairro" name="bairro">
 						</div>
 
-						<div class="col-md-4">
+						<div class="col-md-3">
 							<label for="cidade">Cidade</label>
 							<input type="text" class="form-control" id="cidade" name="cidade">
 						</div>
