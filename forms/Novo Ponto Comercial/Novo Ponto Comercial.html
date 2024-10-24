@@ -12,6 +12,34 @@
 	<div class="fluig-style-guide">
 
 		<form name="form" role="form">
+
+			<div id="dados-revisar" class="panel panel-danger hide">
+				<div class="panel-heading">
+					<h3 class="panel-title">
+						Revisar
+					</h3>
+				</div>
+
+				<div class="panel-body">
+					<div class="form-group">
+						<div class="alert alert-danger" role="alert" style="margin: 0 20px 20px 20px">
+							<p>
+								<strong style="color: #FF8080">ATENÇÃO! </strong>O processo deve ser revisado conforme
+								as
+								orientações abaixo
+							</p>
+						</div>
+					</div>
+					<div class="form-group">
+						<div class="col-sm-12">
+							<label for="dsObsRevisao" class="lb-title">Comentários</label>
+							<textarea class="form-control" id="dsObsRevisao" name="dsObsRevisao" rows="3"
+								readonly></textarea>
+						</div>
+					</div>
+				</div>
+			</div>
+
 			<div class="panel panel-primary">
 				<div class="panel-heading">
 					<h3 class="panel-title">Requisitante</h3>
@@ -20,27 +48,29 @@
 				<div class="panel-body">
 					<div class="form-group row">
 						<div class="col-md-3">
-							<label for="nome">Nome</label>
+							<label for="nome">Nome <span class="fs-color-danger">*</span></label>
 							<input type="text" class="form-control" id="nome" name="nome">
 						</div>
 
 						<div class="col-md-3">
-							<label for="email">E-mail</label>
+							<label for="email">E-mail <span class="fs-color-danger">*</span></label>
 							<input type="text" class="form-control" id="email" name="email">
 						</div>
 
 						<div class="col-md-2">
-							<label for="telefone">Telefone</label>
+							<label for="telefone">Telefone <span class="fs-color-danger">*</span></label>
 							<input type="text" class="form-control" id="telefone" name="telefone">
 						</div>
 
 						<div class="col-md-2">
-							<label for="docIdentidade">Documento de Identidade</label>
+							<label for="docIdentidade">Documento de Identidade <span
+									class="fs-color-danger">*</span></label>
 							<input type="text" class="form-control" id="docIdentidade" name="docIdentidade">
 						</div>
 
 						<div class="col-md-2">
-							<label for="dataNascimento">Data de Nascimento</label>
+							<label for="dataNascimento">Data de Nascimento <span
+									class="fs-color-danger">*</span></label>
 							<input type="text" class="form-control" id="dataNascimento" name="dataNascimento">
 						</div>
 					</div>
@@ -60,7 +90,7 @@
 								nodeletebutton=true>
 								<thead id="headerTbl">
 									<tr>
-										<th style="width: 10%">Remover</th>
+										<th style="width: 10%">Remover <span class="fs-color-danger">*</span></th>
 										<th>Sigla do Site <span class="fs-color-danger">*</span></th>
 									</tr>
 								</thead>
@@ -108,7 +138,7 @@
 					<div class="form-group row">
 
 						<div class="col-md-2">
-							<label for="tipPonto">Tipo do ponto</label>
+							<label for="tipPonto">Tipo do ponto <span class="fs-color-danger">*</span></label>
 
 							<div style="display: flex; gap: 20px">
 
@@ -131,7 +161,8 @@
 						</div>
 
 						<div class="col-md-4">
-							<label for="diasFuncionamento">Dias de Funcionamento</label>
+							<label for="diasFuncionamento">Dias de Funcionamento <span
+									class="fs-color-danger">*</span></label>
 
 							<div style="display: flex; flex-direction: row; justify-content: space-between">
 								<div class="switch switch-success switch-labels">
@@ -183,7 +214,7 @@
 
 					<div class="form-group row">
 						<div class="col-md-1">
-							<label for="cep">Cep</label>
+							<label for="cep">Cep <span class="fs-color-danger">*</span></label>
 							<input type="text" class="form-control" id="cep" name="cep">
 						</div>
 
@@ -207,7 +238,7 @@
 						</div>
 
 						<div class="col-md-1">
-							<label for="numero">Número</label>
+							<label for="numero">Número <span class="fs-color-danger">*</span></label>
 							<input type="text" class="form-control" id="numero" name="numero">
 						</div>
 					</div>
@@ -229,8 +260,52 @@
 				<div class="panel-body">
 					<div class="form-group row">
 						<div class="col-md-2">
-							<label for="valor">Valor</label>
+							<label for="moeda">Moeda <span class="fs-color-danger">*</span></label>
+							<select type="text" class="form-control" id="moeda" name="moeda" dataset="sdMoedas"
+								datasetkey="simbolo" datasetvalue="nomeMoeda"></select>
+						</div>
+
+						<div class="col-md-2">
+							<label for="valor">Valor <span class="fs-color-danger">*</span></label>
 							<input type="text" class="form-control" id="valor" name="valor">
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="panel panel-primary">
+				<div class="panel-heading">
+					<h3 class="panel-title">Aprovação do Novo Ponto Comercial </h3>
+				</div>
+
+				<div class="panel-body">
+					<div class="form-group row">
+						<div class="col-md-2">
+							<label for="AproComercial">Aprovado <span class="fs-color-danger">*</span></label>
+							<select class="form-control" name="AproComercial" id="AproComercial">
+								<option value="sim">Sim</option>
+								<option value="nao">Não</option>
+								<option value="correcao">Correção</option>
+							</select>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="panel panel-primary">
+				<div class="panel-heading">
+					<h3 class="panel-title">Aprovação da Superintendência </h3>
+				</div>
+
+				<div class="panel-body">
+					<div class="form-group row">
+						<div class="col-md-2">
+							<label for="AproSuperi">Aprovado <span class="fs-color-danger">*</span></label>
+							<select class="form-control" name="AproSuperi" id="AproSuperi">
+								<option value="sim">Sim</option>
+								<option value="nao">Não</option>
+								<option value="correcao">Correção</option>
+							</select>
 						</div>
 					</div>
 				</div>
