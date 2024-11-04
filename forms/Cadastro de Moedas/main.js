@@ -65,7 +65,7 @@ class Moedas {
             ];
             const dataset = DatasetFactory.getDataset('ds_cadastro_moedas', null, constraints, null);
             return dataset.values.length === 0;
-        }
+        },
     }
 }
 

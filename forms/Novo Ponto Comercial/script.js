@@ -70,6 +70,27 @@ class PontoComercial {
 
     dataset = {
 
+        buscaCep(verifica) {
+            if (verifica.length >= 8) {
+                var cep = verifica.replace(/\D/g, '');
+                var constraintCep = DatasetFactory.createConstraint('cep', cep, cep, ConstraintType.MUST);
+
+                var datasetCep = DatasetFactory.getDataset("dsCep", null, new Array(constraintCep), null);
+                var retorno = datasetCep.values[0];
+
+                var campos = {
+                    bairro: retorno.Bairro,
+                    cidade: retorno.Cidade,
+                    estado: retorno.Estado,
+                    logradouro: retorno.Logradouro
+                };
+
+                for (var campo in campos) {
+                    $('#' + campo).val(campos[campo] || '');
+                }
+            }
+        }
+
     };
 
 }
