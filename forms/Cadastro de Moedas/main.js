@@ -30,20 +30,19 @@ class Moedas {
         },
 
         normalizaMoeda: (obj) => {
-            const variavel = obj.id.split('___')[0];
             const valor = obj.value;
             const linha = obj.id.substr(8);
-            $(`#${variavel}___${linha}`).val(valor);
+            $('#moeda___' + linha).val(valor);
 
-            $(`[name^="${variavel}___"]`).each(function () {
+            $('[name^="moeda___"]').each(function () {
                 const idx = this.name.split('___')[1];
-                if (idx !== linha && $(`#${variavel}___${idx}`).val() === valor) {
-                    const msg = `A sigla da ${variavel} deve ser única entre todas as linhas!`;
-                    this.utils.avisoUsuario(msg, 'warning', 3000);
-                    $(`#${variavel}___${linha}`).val('');
+                if (idx !== linha && $('#moeda___' + idx).val() === valor) {
+                    const msg = 'A sigla da moeda deve ser única entre todas as linhas!';
+                    moedas.utils.avisoUsuario(msg, 'warning', 3000);
+                    $('#moeda___' + linha).val('');
                     return false;
                 }
-            }.bind(this));
+            });
         }
     };
 

@@ -31,20 +31,15 @@ function createDataset(fields, constraints, sortFields) {
         if (vo.getResult() == null || vo.getResult().isEmpty()) {
             throw new Exception("Retorno está vazio");
         } else {
-            log.info(vo.getResult());
-
             var json = JSON.parse(vo.getResult());
             if (json.erro == "true") {
                 dataset.addColumn("Success");
-
                 dataset.addRow('false')
             } else {
-                dataset.addColumn("CEP");
-                dataset.addColumn("Logradouro");
-                dataset.addColumn("Bairro");
-                dataset.addColumn("Cidade");
-                dataset.addColumn("Estado");
-                dataset.addColumn("Success");
+                var colunas = ["CEP", "Logradouro", "Bairro", "Cidade", "Estado", "Success"];
+                for (var i = 0; i < colunas.length; i++) {
+                    dataset.addColumn(colunas[i]);
+                }
 
                 dataset.addRow([json.cep, json.logradouro,
                 json.bairro, json.localidade, json.uf, true
