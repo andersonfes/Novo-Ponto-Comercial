@@ -5,7 +5,6 @@ function createDataset(fields, constraints, sortFields) {
     var cep = '';
 
     /* Pega o valor da constraint */
-
     if (constraints && constraints.length) {
         for (var i = 0; i < constraints.length; i++) {
 
@@ -31,11 +30,15 @@ function createDataset(fields, constraints, sortFields) {
         if (vo.getResult() == null || vo.getResult().isEmpty()) {
             throw new Exception("Retorno está vazio");
         } else {
+            log.info(vo.getResult());
+
             var json = JSON.parse(vo.getResult());
             if (json.erro == "true") {
                 dataset.addColumn("Success");
+
                 dataset.addRow('false')
             } else {
+
                 var colunas = ["CEP", "Logradouro", "Bairro", "Cidade", "Estado", "Success"];
                 for (var i = 0; i < colunas.length; i++) {
                     dataset.addColumn(colunas[i]);
@@ -45,7 +48,6 @@ function createDataset(fields, constraints, sortFields) {
                 json.bairro, json.localidade, json.uf, true
                 ]);
             }
-
         }
     } catch (err) {
         throw new Exception(err);

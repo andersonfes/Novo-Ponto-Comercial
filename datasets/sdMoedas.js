@@ -2,23 +2,79 @@ function createDataset(fields, constraints, sortFields) {
     var ds = DatasetBuilder.newDataset();
 
     // Adicionando colunas ao dataset
-    ds.addColumn("simbolo");
-    ds.addColumn("nomeMoeda");
-    ds.addColumn("pais");
-    ds.addColumn("taxaCambio");
+    var colunas = ["Real", "Simbolo", "Pais", "Taxa Cambio"];
+    for (var i = 0; i < colunas.length; i++) {
+        ds.addColumn(colunas[i]);
+    }
 
-    // Lista de moedas
-    var moedas = [
-        { simbolo: "R$", nome: "Real", pais: "Brasil", taxaCambio: "1" },
-        { simbolo: "US$", nome: "Dólar Americano", pais: "Estados Unidos", taxaCambio: "5.25" },
-        { simbolo: "U$", nome: "Peso Uruguaio", pais: "Uruguai", taxaCambio: "0.12" },
-        { simbolo: "€", nome: "Euro", pais: "Zona do Euro", taxaCambio: "6.00" },
-        { simbolo: "¥", nome: "Yen Japonês", pais: "Japão", taxaCambio: "0.047" }
-    ];
+    // Cache de dados dos filhos (para evitar múltiplas consultas)
+    var cacheFilho = {};
 
-    // Adicionando as moedas ao dataset
-    for (var i = 0; i < moedas.rowsCount; i++) {
-        ds.addRow(new Array(moedas[i].simbolo, moedas[i].nome, moedas[i].pais, moedas[i].taxaCambio));
+    // Definindo as constraints iniciais para o dataset pai
+    var parentConstraints = [];
+    parentConstraints.push(DatasetFactory.createConstraint("metadata#active", true, true, ConstraintType.MUST));
+
+    // Consultando o dataset pai
+    var dsPai = DatasetFactory.getDataset('ds_cadastro_moedas', null, parentConstraints, null);
+
+    for (var iPai = 0; iPai < dsPai.rowsCount; iPai++) {
+        var id = dsPai.getValue(iPai, 'metadata#id');
+        var vers = dsPai.getValue(iPai, 'metadata#version');
+
+        // Checa se o dataset filho já foi consultado anteriormente (usando o cache)
+        var cacheKey = id + "_" + vers;
+        var dsFilho;
+
+        // Se o dataset filho já estiver no cache, usamos ele, senão, fazemos a consulta
+        if (!cacheFilho[cacheKey]) {
+            var constFilho = [];
+            constFilho.push(DatasetFactory.createConstraint('metadata#active', true, true, ConstraintType.MUST));
+            constFilho.push(DatasetFactory.createConstraint('metadata#id', id, id, ConstraintType.MUST));
+            constFilho.push(DatasetFactory.createConstraint('metadata#version', vers, vers, ConstraintType.MUST));
+            constFilho.push(DatasetFactory.createConstraint('tablename', 'dpTbPlan', 'dpTbPlan', ConstraintType.MUST));
+
+            // Adicionando restrições adicionais conforme os parâmetros passados
+            if (constraints != null) {
+                for (var i = 0; i < constraints.length; i++) {
+                    if (constraints[i].fieldName == 'moeda') {
+                        var vlr = constraints[i].initialValue;
+                        constFilho.push(DatasetFactory.createConstraint('ds_cadastro_moedas', vlr, vlr, ConstraintType.MUST));
+                        break;
+                    };
+                    if (constraints[i].fieldName == 'simbolo') {
+                        var vlr = constraints[i].initialValue;
+                        constFilho.push(DatasetFactory.createConstraint('ds_cadastro_moedas', vlr, vlr, ConstraintType.MUST));
+                        break;
+                    };
+                    if (constraints[i].fieldName == 'pais') {
+                        var vlr = constraints[i].initialValue;
+                        constFilho.push(DatasetFactory.createConstraint('ds_cadastro_moedas', vlr, vlr, ConstraintType.MUST));
+                        break;
+                    };
+                    if (constraints[i].fieldName == 'taxaCambio') {
+                        var vlr = constraints[i].initialValue;
+                        constFilho.push(DatasetFactory.createConstraint('ds_cadastro_moedas', vlr, vlr, ConstraintType.MUST));
+                        break;
+                    }
+                }
+            }
+
+            // Consultando o dataset filho
+            dsFilho = DatasetFactory.getDataset('ds_cadastro_moedas', null, constFilho, null);
+
+            // Armazenando o resultado no cache
+            cacheFilho[cacheKey] = dsFilho;
+        } else {
+            // Se os dados já estiverem no cache, usamos diretamente
+            dsFilho = cacheFilho[cacheKey];
+        }
+
+        // Verificando se o dataset filho contém dados e adicionando ao dataset final
+        if (dsFilho != null && dsFilho.rowsCount > 0) {
+            for (var i = 0; i < dsFilho.rowsCount; i++) {
+                ds.addRow([dsFilho.getValue(i, 'moeda'), dsFilho.getValue(i, 'simbolo'), dsFilho.getValue(i, 'pais'), dsFilho.getValue(i, 'taxaCambio')]);
+            }
+        }
     }
 
     return ds;
