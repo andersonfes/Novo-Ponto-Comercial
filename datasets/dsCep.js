@@ -14,7 +14,6 @@ function createDataset(fields, constraints, sortFields) {
         }
     }
 
-
     /* faz a chamada do ao serviço retornando um objeto com os valores da requisição */
     try {
         var clientService = fluigAPI.getAuthorizeClientService();
@@ -53,5 +52,4 @@ function createDataset(fields, constraints, sortFields) {
         throw new Exception(err);
     }
     return dataset;
-
 }

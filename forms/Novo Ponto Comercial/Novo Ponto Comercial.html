@@ -252,7 +252,7 @@
 					<div class="form-group row">
 						<div class="col-md-12">
 							<label for="infoAdicional">Imformações Adicionais</label>
-							<textarea rows="5" class="form-control" name="infoAdicional" id="infoAdicional"></textarea>
+							<textarea rows="3" class="form-control" name="infoAdicional" id="infoAdicional"></textarea>
 						</div>
 					</div>
 				</div>
@@ -267,8 +267,17 @@
 					<div class="form-group row">
 						<div class="col-md-2">
 							<label for="moeda">Moeda <span class="fs-color-danger">*</span></label>
-							<select type="text" class="form-control" id="moeda" name="moeda" dataset="sdMoedas"
-								datasetkey="simbolo" datasetvalue="nomeMoeda"></select>
+							<input type="zoom" class="form-control" id="moeda" name="moeda" data-zoom="
+								{
+									'displayKey':'Moeda',
+									'placeholder': 'Selecione a Moeda',
+									'datasetId':'sdMoedas',
+									'fields':[{
+										'field':'Moeda',
+										'label':'Moeda',
+										'standard':true
+									}]
+								}">
 						</div>
 
 						<div class="col-md-2">
@@ -296,6 +305,14 @@
 							</select>
 						</div>
 					</div>
+
+					<div class="form-group row">
+						<div class="col-md-12">
+							<label for="ObsComercial">Observação</label>
+							<textarea rows="3" class="form-control" name="ObsComercial" id="ObsComercial"
+								onchange="pontoComercial.events.onChangeObs(this.value)"></textarea>
+						</div>
+					</div>
 				</div>
 			</div>
 
@@ -314,6 +331,14 @@
 								<option value="nao">Não</option>
 								<option value="correcao">Correção</option>
 							</select>
+						</div>
+					</div>
+
+					<div class="form-group row">
+						<div class="col-md-12">
+							<label for="ObsSuperintendencia">Observação</label>
+							<textarea rows="3" class="form-control" name="ObsSuperintendencia" id="ObsSuperintendencia"
+								onchange="pontoComercial.events.onChangeObs(this.value)"></textarea>
 						</div>
 					</div>
 				</div>

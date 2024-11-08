@@ -34,6 +34,7 @@ class PontoComercial {
             $('#docIdentidade').mask('00.000.000-0');
             $('#cep').mask('00000-000');
             $('#numero').mask('0000');
+            $('#valor').mask("#.##0,00", { reverse: true });
         },
 
         initData: () => {
@@ -66,6 +67,10 @@ class PontoComercial {
         onclickAdd: () => {
             var index = wdkAddChild('dpTbPlan');
         },
+
+        onChangeObs: (value) => {
+            $('#dsObsRevisao').val(value);
+        }
     };
 
     dataset = {

@@ -2,7 +2,7 @@ function createDataset(fields, constraints, sortFields) {
     var ds = DatasetBuilder.newDataset();
 
     // Adicionando colunas ao dataset
-    var colunas = ["Real", "Simbolo", "Pais", "Taxa Cambio"];
+    var colunas = ["Moeda", "Simbolo", "Pais", "Taxa Cambio"];
     for (var i = 0; i < colunas.length; i++) {
         ds.addColumn(colunas[i]);
     }
