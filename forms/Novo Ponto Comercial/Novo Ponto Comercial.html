@@ -127,8 +127,8 @@
 					</div>
 					<div class="form-group row" style="margin-top: 10px; text-align: center;">
 						<div class="col-sm-12">
-							<input id="botAtribuir" type="button" class="btn btn-primary btn-add" value="Inserir"
-								onclick="pontoComercial.events.onclickAdd()" />
+							<input id="botAtribuir" name="botAtribuir" type="button" class="btn btn-primary btn-add"
+								value="Inserir" onclick="pontoComercial.events.onclickAdd()" />
 						</div>
 					</div>
 				</div>
@@ -142,22 +142,22 @@
 				<div class="panel-body">
 					<div class="form-group row">
 
-						<div class="col-md-2">
+						<div class="col-md-4">
 							<label for="tipPonto">Tipo do ponto <span class="fs-color-danger">*</span></label>
 
 							<div style="display: flex; gap: 20px">
 
 								<div class="switch switch-success">
 									<label for="switch-6-1">Quiosque</label>
-									<input class="switch-input" type="radio" value="quiosque" name="usercolorpreference"
-										id="switch-6-1" />
+									<input class="switch-input seleciona" type="radio" value="quiosque"
+										name="usercolorpreference" id="switch-6-1" />
 									<label class="switch-button" for="switch-6-1">Toggle</label>
 								</div>
 
 								<div class="switch switch-success">
 									<label for="switch-6-2">Loja</label>
-									<input class="switch-input" type="radio" value="loja" name="usercolorpreference"
-										id="switch-6-2" />
+									<input class="switch-input seleciona" type="radio" value="loja"
+										name="usercolorpreference" id="switch-6-2" />
 									<label class="switch-button" for="switch-6-2">Toggle</label>
 
 								</div>
@@ -172,43 +172,43 @@
 							<div style="display: flex; flex-direction: row; justify-content: space-between">
 								<div class="switch switch-success switch-labels">
 									<label for="switch-3-1">Domingo</label>
-									<input class="switch-input" type="checkbox" name="domingo" id="switch-3-1"
+									<input class="switch-input seleciona" type="checkbox" name="domingo" id="switch-3-1"
 										value="domingo" />
 									<label class="switch-button" for="switch-3-1">Toggle</label>
 								</div>
 								<div class="switch switch-success switch-labels">
 									<label for="switch-3-2">Segunda</label>
-									<input class="switch-input" type="checkbox" name="segunda" id="switch-3-2"
+									<input class="switch-input seleciona" type="checkbox" name="segunda" id="switch-3-2"
 										value="segunda" />
 									<label class="switch-button" for="switch-3-2">Toggle</label>
 								</div>
 								<div class="switch switch-success switch-labels">
 									<label for="switch-3-3">Terça</label>
-									<input class="switch-input" type="checkbox" name="terca" id="switch-3-3"
+									<input class="switch-input seleciona" type="checkbox" name="terca" id="switch-3-3"
 										value="terca" />
 									<label class="switch-button" for="switch-3-3">Toggle</label>
 								</div>
 								<div class="switch switch-success switch-labels">
 									<label for="switch-3-4">Quarta</label>
-									<input class="switch-input" type="checkbox" name="quarta" id="switch-3-4"
+									<input class="switch-input seleciona" type="checkbox" name="quarta" id="switch-3-4"
 										value="quarta" />
 									<label class="switch-button" for="switch-3-4">Toggle</label>
 								</div>
 								<div class="switch switch-success switch-labels">
 									<label for="switch-3-5">Quinta</label>
-									<input class="switch-input" type="checkbox" name="quinta" id="switch-3-5"
+									<input class="switch-input seleciona" type="checkbox" name="quinta" id="switch-3-5"
 										value="quinta" />
 									<label class="switch-button" for="switch-3-5">Toggle</label>
 								</div>
 								<div class="switch switch-success switch-labels">
 									<label for="switch-3-6">Sexta</label>
-									<input class="switch-input" type="checkbox" name="sexta" id="switch-3-6"
+									<input class="switch-input seleciona" type="checkbox" name="sexta" id="switch-3-6"
 										value="sexta" />
 									<label class="switch-button" for="switch-3-6">Toggle</label>
 								</div>
 								<div class="switch switch-success switch-labels">
 									<label for="switch-3-7">Sabado</label>
-									<input class="switch-input" type="checkbox" name="sabadp" id="switch-3-7"
+									<input class="switch-input seleciona" type="checkbox" name="sabadp" id="switch-3-7"
 										value="sabado" />
 									<label class="switch-button" for="switch-3-7">Toggle</label>
 								</div>
@@ -226,21 +226,21 @@
 
 						<div class="col-md-3">
 							<label for="logradouro">Logradouro</label>
-							<input type="text" class="form-control" id="logradouro" name="logradouro">
+							<input type="text" class="form-control" id="logradouro" name="logradouro" readonly>
 						</div>
 						<div class="col-md-3">
 							<label for="bairro">Bairro</label>
-							<input type="text" class="form-control" id="bairro" name="bairro">
+							<input type="text" class="form-control" id="bairro" name="bairro" readonly>
 						</div>
 
 						<div class="col-md-3">
 							<label for="cidade">Cidade</label>
-							<input type="text" class="form-control" id="cidade" name="cidade">
+							<input type="text" class="form-control" id="cidade" name="cidade" readonly>
 						</div>
 
 						<div class="col-md-1">
 							<label for="estado">Estado</label>
-							<input type="text" class="form-control" id="estado" name="estado">
+							<input type="text" class="form-control" id="estado" name="estado" readonly>
 						</div>
 
 						<div class="col-md-1">
@@ -297,7 +297,8 @@
 					<div class="form-group row">
 						<div class="col-md-2">
 							<label for="AproComercial">Aprovado <span class="fs-color-danger">*</span></label>
-							<select class="form-control" name="AproComercial" id="AproComercial">
+							<select class="form-control" name="AproComercial" id="AproComercial"
+								onchange="pontoComercial.events.onChangeAprov(this)">
 								<option value=""></option>
 								<option value="sim">Sim</option>
 								<option value="nao">Não</option>
@@ -306,9 +307,9 @@
 						</div>
 					</div>
 
-					<div class="form-group row">
+					<div class="form-group row aprovaObs hide">
 						<div class="col-md-12">
-							<label for="ObsComercial">Observação</label>
+							<label for="ObsComercial">Observação <span class="fs-color-danger">*</span></label>
 							<textarea rows="3" class="form-control" name="ObsComercial" id="ObsComercial"
 								onchange="pontoComercial.events.onChangeObs(this.value)"></textarea>
 						</div>
@@ -325,7 +326,8 @@
 					<div class="form-group row">
 						<div class="col-md-2">
 							<label for="AproSuperi">Aprovado <span class="fs-color-danger">*</span></label>
-							<select class="form-control" name="AproSuperi" id="AproSuperi">
+							<select class="form-control" name="AproSuperi" id="AproSuperi"
+								onchange="pontoComercial.events.onChangeAprov(this)">
 								<option value=""></option>
 								<option value="sim">Sim</option>
 								<option value="nao">Não</option>
@@ -334,9 +336,9 @@
 						</div>
 					</div>
 
-					<div class="form-group row">
+					<div class="form-group row superiObs hide">
 						<div class="col-md-12">
-							<label for="ObsSuperintendencia">Observação</label>
+							<label for="ObsSuperintendencia">Observação <span class="fs-color-danger">*</span></label>
 							<textarea rows="3" class="form-control" name="ObsSuperintendencia" id="ObsSuperintendencia"
 								onchange="pontoComercial.events.onChangeObs(this.value)"></textarea>
 						</div>

@@ -7,15 +7,20 @@ class PontoComercial {
         },
 
         atAproNegocio: () => {
+            $('#painel-aprovacao-comercial').removeClass('hide');
+            pontoComercial.utils.bloqueiaCampos();
 
         },
 
         atAproSuperintedencia: () => {
-
+            $('#painel-superintendencia').removeClass('hide');
+            $('#painel-aprovacao-comercial').removeClass('hide');
+            pontoComercial.utils.bloqueiaCampos();
         },
 
         atRevisar: () => {
-
+            $('#dados-revisar').removeClass('hide');
+            pontoComercial.utils.bloqueiaCampos();
         },
 
         reloadProcessDetails: function () {
@@ -46,6 +51,10 @@ class PontoComercial {
     };
 
     utils = {
+        bloqueiaCampos: () => {
+            $('#botAtribuir').prop('disabled', true);
+            $('.seleciona').prop('disabled', true);
+        }
 
     };
 
@@ -70,6 +79,24 @@ class PontoComercial {
 
         onChangeObs: (value) => {
             $('#dsObsRevisao').val(value);
+        },
+
+        onChangeAprov: (thisDiv) => {
+            if (thisDiv.id == 'AproComercial') {
+                if (thisDiv.value == 'sim' || thisDiv.value == '') {
+                    $('.aprovaObs').addClass('hide');
+                } else {
+                    $('.aprovaObs').removeClass('hide');
+                }
+            }
+
+            if (thisDiv.id == 'AproSuperi') {
+                if (thisDiv.value == 'sim' || thisDiv.value == '') {
+                    $('.superiObs').addClass('hide');
+                } else {
+                    $('.superiObs').removeClass('hide');
+                }
+            }
         }
     };
 
