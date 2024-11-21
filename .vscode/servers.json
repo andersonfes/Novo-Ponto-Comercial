@@ -1,0 +1,15 @@
+{
+	"version": "1.0.0",
+	"configurations": [
+		{
+			"id": "ev5hbzbsz6am39exxizfbvaysa8x3p",
+			"name": "Fluig",
+			"host": "127.0.0.1",
+			"ssl": false,
+			"port": 8080,
+			"username": "andersonFes",
+			"password": "eyJpdiI6ImRmNTg4NDQ1MTIzYmIzMWNiMGQ1OGRhNTgyODcwMmZlIiwic2FsdCI6IjE5N2Y1NzFkODc0YWZlY2I2OWRmNGE5MTZmMjFlZDliIiwidGV4dCI6IjhhNGIzYjM2YjFiZTgyMmNkZDJiY2I5M2JhN2Y2ODIyIn0=",
+			"confirmExporting": false
+		}
+	]
+}
