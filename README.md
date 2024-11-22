@@ -4,6 +4,7 @@
 <h3>Novo Ponto Comercial</h3>
 
 ![Static Badge](https://img.shields.io/badge/status-active-success)
+
 </div>
 
 <div align="center">
@@ -85,7 +86,7 @@ Os seguintes serviços são essenciais para o funcionamento do sistema:
 # Processo: Novo Ponto Comercial
 
 <div align="center">
-    <p><img width=500px src="./forms/Novo Ponto Comercial/Novo-ponto-comercial.png" alt="Imagem do processo Novo Ponto Comercial"></p>
+    <p><img width=700px src="./forms/Novo Ponto Comercial/Novo-ponto-comercial.png" alt="Imagem do processo Novo Ponto Comercial"></p>
     <h3>Detalhamento do Processo de Cadastro de Novo Ponto Comercial</h3>
 </div>
 
