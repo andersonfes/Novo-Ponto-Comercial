@@ -57,29 +57,58 @@
 					<div class="form-group row">
 						<div class="col-md-3">
 							<label for="nome">Nome <span class="fs-color-danger">*</span></label>
-							<input type="text" class="form-control" id="nome" name="nome">
+							<div class="input-group">
+								<label class="input-group-addon">
+									<span class="fluigicon fluigicon-user"></span>
+								</label><input type="text" class="form-control" id="nome" name="nome"
+									placeholder="Digite se nome completo">
+							</div>
 						</div>
 
 						<div class="col-md-3">
 							<label for="email">E-mail <span class="fs-color-danger">*</span></label>
-							<input type="text" class="form-control" id="email" name="email">
+							<div class="input-group">
+								<label class="input-group-addon">
+									<span class="fluigicon fluigicon-envelope"></span>
+								</label>
+								<input type="text" class="form-control" id="email" name="email"
+									placeholder="Digite um E-mail">
+							</div>
 						</div>
 
 						<div class="col-md-2">
 							<label for="telefone">Telefone <span class="fs-color-danger">*</span></label>
-							<input type="text" class="form-control" id="telefone" name="telefone">
+							<div class="input-group">
+								<label class="input-group-addon">
+									<span class="fluigicon fluigicon-phone"></span>
+								</label>
+								<input type="text" class="form-control" id="telefone" name="telefone"
+									placeholder="Digite um Telefone">
+							</div>
+
 						</div>
 
 						<div class="col-md-2">
 							<label for="docIdentidade">Documento de Identidade <span
 									class="fs-color-danger">*</span></label>
-							<input type="text" class="form-control" id="docIdentidade" name="docIdentidade">
+							<div class="input-group">
+								<label class="input-group-addon">
+									<span class="fluigicon fluigicon-user-card"></span>
+								</label><input type="text" class="form-control" id="docIdentidade" name="docIdentidade"
+									placeholder="Digite uma Identidade">
+							</div>
 						</div>
 
 						<div class="col-md-2">
 							<label for="dataNascimento">Data de Nascimento <span
 									class="fs-color-danger">*</span></label>
-							<input type="text" class="form-control" id="dataNascimento" name="dataNascimento">
+							<div class="input-group">
+								<label class="input-group-addon">
+									<span class="fluigicon fluigicon-calendar"></span>
+								</label>
+								<input type="text" class="form-control" id="dataNascimento" name="dataNascimento"
+									placeholder="Digite uma Data de Nascimento">
+							</div>
 						</div>
 					</div>
 				</div>
@@ -108,8 +137,11 @@
 										</i>
 									</td>
 									<td>
-										<input type="zoom" class="form-control" id="responsavel" name="responsavel"
-											data-zoom="
+										<div class="input-group">
+											<label class="input-group-addon">
+												<span class="fluigicon fluigicon-user"></span></label>
+											<input type="zoom" class="form-control" id="responsavel" name="responsavel"
+												data-zoom="
 												{
 													'displayKey':'colleagueName',
 													'placeholder': 'Selecione o usuário do Fluig',
@@ -120,6 +152,8 @@
 														'standard':true
 													}]
 												}">
+										</div>
+
 									</td>
 								</tr>
 							</tbody>
@@ -218,34 +252,58 @@
 					</div>
 
 					<div class="form-group row">
-						<div class="col-md-1">
+						<div class="col-md-2">
 							<label for="cep">Cep <span class="fs-color-danger">*</span></label>
-							<input type="text" class="form-control" id="cep" name="cep"
-								onblur="pontoComercial.dataset.buscaCep(this.value)">
+							<div class="input-group">
+								<label class="input-group-addon">
+									<span class="fluigicon fluigicon-map-marker"></span></label>
+								<input type="text" class="form-control" id="cep" name="cep"
+									onblur="pontoComercial.dataset.buscaCep(this.value)" placeholder="Digite um CEP">
+							</div>
 						</div>
 
 						<div class="col-md-3">
 							<label for="logradouro">Logradouro</label>
-							<input type="text" class="form-control" id="logradouro" name="logradouro" readonly>
+							<div class="input-group">
+								<label class="input-group-addon">
+									<span class="fluigicon fluigicon-map-marker"></span></label><input type="text"
+									class="form-control" id="logradouro" name="logradouro" readonly>
+							</div>
 						</div>
 						<div class="col-md-3">
 							<label for="bairro">Bairro</label>
-							<input type="text" class="form-control" id="bairro" name="bairro" readonly>
+							<div class="input-group">
+								<label class="input-group-addon">
+									<span class="fluigicon fluigicon-map-marker"></span></label><input type="text"
+									class="form-control" id="bairro" name="bairro" readonly>
+							</div>
 						</div>
 
-						<div class="col-md-3">
+						<div class="col-md-2">
 							<label for="cidade">Cidade</label>
-							<input type="text" class="form-control" id="cidade" name="cidade" readonly>
+							<div class="input-group">
+								<label class="input-group-addon">
+									<span class="fluigicon fluigicon-map-marker"></span></label><input type="text"
+									class="form-control" id="cidade" name="cidade" readonly>
+							</div>
 						</div>
 
 						<div class="col-md-1">
 							<label for="estado">Estado</label>
-							<input type="text" class="form-control" id="estado" name="estado" readonly>
+							<div class="input-group">
+								<label class="input-group-addon">
+									<span class="fluigicon fluigicon-map-marker"></span></label>
+								<input type="text" class="form-control" id="estado" name="estado" readonly>
+							</div>
 						</div>
 
 						<div class="col-md-1">
 							<label for="numero">Número <span class="fs-color-danger">*</span></label>
-							<input type="text" class="form-control" id="numero" name="numero">
+							<div class="input-group">
+								<label class="input-group-addon">
+									<span class="fluigicon fluigicon-home"></span></label><input type="text"
+									class="form-control" id="numero" name="numero">
+							</div>
 						</div>
 					</div>
 
@@ -267,7 +325,10 @@
 					<div class="form-group row">
 						<div class="col-md-2">
 							<label for="moeda">Moeda <span class="fs-color-danger">*</span></label>
-							<input type="zoom" class="form-control" id="moeda" name="moeda" data-zoom="
+							<div class="input-group">
+								<label class="input-group-addon">
+									<span class="fluigicon fluigicon-money-circle"></span></label>
+								<input type="zoom" class="form-control" id="moeda" name="moeda" data-zoom="
 								{
 									'displayKey':'Moeda',
 									'placeholder': 'Selecione a Moeda',
@@ -278,11 +339,16 @@
 										'standard':true
 									}]
 								}">
+							</div>
 						</div>
 
 						<div class="col-md-2">
 							<label for="valor">Valor <span class="fs-color-danger">*</span></label>
-							<input type="text" class="form-control" id="valor" name="valor">
+							<div class="input-group">
+								<label class="input-group-addon">
+									<span class="fluigicon fluigicon-money"></span></label><input type="text"
+									class="form-control" id="valor" name="valor">
+							</div>
 						</div>
 					</div>
 				</div>
