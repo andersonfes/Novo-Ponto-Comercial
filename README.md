@@ -79,6 +79,8 @@ Os seguintes serviços são essenciais para o funcionamento do sistema:
 
 - **ds_novo_ponto_comercial**: Formulário principal do processo.
 - **ds_cadastro_moedas**: Formulário de apoio.
+- **dsCep**: Trás as informações do endereço a partir do CEP.
+- **sdMoedas**: Consulta o Formulário de apoio trazendo as informações.
 
 ## 📧 Template de E-mail <a name="template"></a>
 - Não há templates de e-mail definidos.
@@ -91,7 +93,6 @@ Os seguintes serviços são essenciais para o funcionamento do sistema:
 </div>
 
 Este processo descreve as etapas e configurações necessárias para realizar o cadastro de novos pontos comerciais no sistema Fluig.
-
 
 # ✔️ Eventos de Processo e Scripts <a name="workflow"></a>
 - Nenhum evento de processo ou scripts definidos até o momento.
