@@ -2,7 +2,7 @@
 
 <div align="center">
 <h3>Novo Ponto Comercial</h3>
-[![Status](https://img.shields.io/badge/status-active-success.svg)]()
+![Static Badge](https://img.shields.io/badge/status-active-success)
 </div>
 
 <div align="center">
