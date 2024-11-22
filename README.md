@@ -1,7 +1,6 @@
 # Novo Ponto Comercial
 
 <div align="center">
-<p><img width=200px height=200px src="./logo.png" alt="Project logo"></p>
 <h3>Novo Ponto Comercial</h3>
 [![Status](https://img.shields.io/badge/status-active-success.svg)]()
 </div>
